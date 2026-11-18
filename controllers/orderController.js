@@ -127,11 +127,7 @@ const getAllOrders = async (req, res, next) => {
 };
 
 // ADMIN UPDATE ORDER STATUS
-const updateOrderStatus = async (
-  req,
-  res,
-  next
-) => {
+const updateOrderStatus = async (req, res, next) => {
   try {
     const { status } = req.body;
 

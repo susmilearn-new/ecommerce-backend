@@ -16,11 +16,14 @@ const analyticsRoutes = require('./routes/analyticsRoutes');
 connectDB();
 
 const app = express();
-
-// Core Middleware
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Mount API Routes
 app.use('/api/auth', authRoutes);
